@@ -1,0 +1,655 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  line-height: 1.6;
+  color: #000000;
+  background-color: #f4f4f4;
+}
+
+a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+.nav a {
+  color: rgb(255, 255, 255);
+}
+
+.dropdown a {
+  color: rgb(0, 0, 0);
+}
+
+/* 헤더 */
+main {
+  width: auto;
+  height: 980px;
+  margin: 0 auto;
+  background: url(img/bn15.jpg);
+  background-size: cover;
+  background-size: 100% 100%;
+  background-position: center;
+  transition: transform 0.6s ease;
+}
+
+header {
+  padding-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.logo img {
+  width: auto;
+  height: auto;
+  margin-left: 30%;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.floating-img {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  width: 170px;
+  animation: floating 2s ease-in-out infinite;
+  transition: transform 0.2s ease-out;
+  z-index: 10;
+}
+
+nav ul {
+  display: flex;
+  margin-left: 179%;
+  width: max-content;
+  color: white;
+}
+
+nav ul li {
+  font-size: 15px;
+  display: inline-block;
+  margin: 5px 12px;
+  padding-left: 0px;
+  position: relative;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s ease;
+  cursor: pointer;
+}
+
+nav ul li .dropdown {
+  display: none;
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: -180%;
+  background-color: white;
+  color: black;
+  padding: 5px;
+  border-radius: 0px;
+  width: 130px;
+  height: auto;
+  text-align: center;
+}
+
+nav ul li:hover {
+  transform: scale(1.05);
+}
+
+nav ul li .dropdown {
+  display: none;
+  list-style: none;
+  position: absolute;
+  top: 120%;
+  left: -180%;
+  background-color: white;
+  color: black;
+  padding: 5px;
+  border-radius: 0px;
+  width: 130px;
+  height: auto;
+  text-align: center;
+}
+
+nav ul li:hover .dropdown {
+  display: block;
+}
+
+nav ul li .dropdown li {
+  margin: 5px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s ease;
+  cursor: pointer;
+}
+
+nav ul li .dropdown li:hover {
+  border-bottom: 1.5px solid #2fa9a3;
+  transform: scale(1.05);
+}
+
+nav ul li .dropdown li:active {
+  transform: scale(1);
+}
+
+/* 소개 섹션 */
+.intro {
+  text-align: center;
+  padding: 100px;
+  width: auto;
+  height: 980px;
+  background: url(img/bn39.jpg);
+  background-size: cover;
+  display: block;
+  color: white;
+  line-height: 2.5;
+  font-size: 16px;
+}
+
+.intro p {
+  font-weight: bold;
+  color: #02817d;
+  font-size: 16px;
+}
+
+.btn {
+  background: #b3fdda;
+  color: #02817d;
+  padding: 10px 20px;
+  border: 2.3px solid #2fa9a3;
+  cursor: pointer;
+  border-radius: 25px;
+  font-size: 15px;
+}
+
+.btn1 {
+  background: #fff8bc;
+  color: #02817d;
+  padding: 10px 20px;
+  border: 2.3px solid #2fa9a3;
+  cursor: pointer;
+  border-radius: 25px;
+  font-size: 15px;
+}
+
+.jigu-box {
+  position: relative;
+  max-width: 50%;
+  height: auto;
+}
+
+.jigu-box img {
+  position: absolute;
+  top: -120px;
+  right: -550px;
+  width: 20%;
+  height: auto;
+}
+
+.jigu-box2 {
+  position: relative;
+  max-width: 40%;
+  height: auto;
+}
+
+.jigu-box2 img {
+  position: absolute;
+  top: -60px;
+  left: 390px;
+  width: 20%;
+  height: auto;
+}
+
+.jigu-box3 {
+  position: relative;
+  max-width: 35%;
+  height: auto;
+}
+
+.jigu-box3 img {
+  position: absolute;
+  top: 310px;
+  right: -1120px;
+  width: 20%;
+  height: auto;
+}
+
+.jigu-box4 {
+  position: relative;
+  max-width: 50%;
+  height: auto;
+}
+
+.jigu-box4 img {
+  position: absolute;
+  top: 180px;
+  left: 10px;
+  width: 20%;
+  height: auto;
+}
+
+.jigu-box5 {
+  position: relative;
+  max-width: 33%;
+  height: auto;
+}
+
+.jigu-box5 img {
+  position: absolute;
+  top: -20px;
+  right: -1180px;
+  width: 20%;
+  height: auto;
+}
+
+.jigu-box6 {
+  position: relative;
+  max-width: 35%;
+  height: auto;
+}
+
+.jigu-box6 img {
+  position: absolute;
+  top: -120px;
+  right: 500px;
+  width: 20%;
+  height: auto;
+}
+
+/* 실천 방법 섹션 */
+.actions {
+  background: #fff;
+  padding: 130px;
+  height: 785px;
+  text-align: left;
+}
+
+.sm1-text p {
+  justify-content: left;
+  color: #00c89d;
+  font-weight: bold;
+  margin-left: 55.1%;
+  margin-bottom: -24px;
+}
+
+.sm1-text h2 {
+  justify-content: left;
+  margin-left: 55%;
+  margin-top: 25px;
+}
+.sm1 {
+  display: flex;
+  margin-left: -70px;
+  margin-top: -85px;
+  margin-right: 350px;
+}
+
+.swiper {
+  width: 500px;
+  height: 500px;
+  border-radius: 35px;
+  overflow: hidden;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: rgb(255, 255, 255);
+}
+
+.swiper-pagination {
+  bottom: 10px;
+}
+
+.sm2 {
+  display: flex;
+  padding-left: 380px;
+  margin-top: -320px;
+}
+
+.sm2 .btn1 {
+  background: #00c89d;
+  color: rgb(255, 255, 255);
+  padding: 20px 40px;
+  border: none;
+  cursor: pointer;
+  border-radius: 45px;
+  margin-left: 41.5%;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.sm3 {
+  display: flex;
+  gap: 10px;
+  padding-left: 380px;
+  margin-top: 105px;
+  margin-left: 32%;
+}
+.sm3 .box1 {
+  background: rgb(255, 220, 145);
+  width: 150px;
+  height: 150px;
+  border-radius: 30px;
+}
+
+.sm3 .box1:nth-child(1) {
+  background: url(img/i2.jpg); /* 첫 번째 박스 이미지 */
+  background-size: cover;
+  background-position: center;
+}
+
+.sm3 .box1:nth-child(2) {
+  background: url(img/i3.jpg); /* 첫 번째 박스 이미지 */
+  background-size: cover;
+  background-position: center;
+}
+
+.sm3 .box1:nth-child(3) {
+  background: url(img/i4.jpg); /* 첫 번째 박스 이미지 */
+  background-size: cover;
+  background-position: center;
+}
+
+/* 슬로건 섹션 */
+.site {
+  height: 980px;
+  background: url(img/bn46.jpg);
+  background-size: cover;
+  background-size: 100% 100%;
+  /* 컬러 지우고 url() < 여기에다 이미지 넣기 */
+}
+
+/* 영상 섹션 */
+
+.bg1 {
+  height: auto;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 60px;
+  padding-bottom: 100px;
+  background: url(img/bn23.jpg);
+  background-size: cover;
+  background-size: 100% 100%;
+}
+
+.bg1 p {
+  text-align: center;
+  font-size: 22px;
+  padding-bottom: 25px;
+  padding-top: 10px;
+  color: white;
+}
+
+.bg1 h2 {
+  text-align: center;
+  color: white;
+}
+
+.video-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.video-box video {
+  width: 100%;
+  max-width: 1000px;
+  border-radius: 80px;
+  margin-top: 50px;
+  padding-bottom: 25px;
+}
+
+/* 지톡이 섹션 */
+
+.bg2 {
+  width: 100%;
+  height: 2400px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 80px;
+  background: url(img/bn45.jpg);
+  background-size: 100% 100%;
+}
+
+.bg2 h2 {
+  font-size: 25px;
+  color: rgb(6, 97, 55);
+  margin-top: 20px;
+  padding-bottom: 40px;
+  padding-left: 110px;
+}
+
+.png-box {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+}
+.png-box img {
+  position: absolute;
+  top: -1470px;
+  margin-top: 90px;
+  right: 0;
+  width: 20%;
+  height: auto;
+}
+
+.png-box1 {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+}
+.png-box1 img {
+  position: absolute;
+  top: -550px;
+  width: 20%;
+  height: auto;
+}
+
+.png-box2 {
+  position: relative;
+  max-width: 30%;
+  height: auto;
+}
+.png-box2 img {
+  position: absolute;
+  top: -200px;
+  right: -500px;
+  width: 20%;
+  height: auto;
+}
+
+.img-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 700px;
+}
+
+.img-box .box {
+  margin: 1%;
+  background: rgb(112, 199, 148);
+  width: 350px;
+  height: 350px;
+  border-radius: 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.img-box .box:hover {
+  transform: scale(1.05);
+}
+
+.img-box .box:nth-child(1) {
+  background: url(img/mn1.jpg); /* 첫 번째 박스 이미지 */
+  background-size: cover;
+  background-position: center;
+}
+
+.img-box .box:nth-child(2) {
+  background: url(img/mn2.jpg); /* 첫 번째 박스 이미지 */
+  background-size: cover;
+  background-position: center;
+}
+
+.img-box .box:nth-child(3) {
+  background: url(img/mn3.jpg); /* 첫 번째 박스 이미지 */
+  background-size: cover;
+  background-position: center;
+}
+
+.img-box .box:nth-child(4) {
+  background: url(img/mn4.jpg); /* 첫 번째 박스 이미지 */
+  background-size: cover;
+  background-position: center;
+}
+
+.img-box .box .text-box {
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  color: #00c89d;
+  padding: 20px;
+  text-align: left;
+  border-radius: 0 0 40px 40px;
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.img-box .box:hover .text-box {
+  transform: translateY(-60px);
+  opacity: 1;
+}
+
+/* 마음톡톡 섹션 */
+.bg3 {
+  position: relative;
+  background: url(img/bn43.jpg);
+  background-size: cover;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 1300px;
+  padding-left: 3%;
+  padding-top: 3%;
+}
+
+.bg3 span {
+  color: #c1f8f4;
+}
+.bg3 h2 {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 740px;
+}
+
+.bg3 p {
+  font-size: 15px;
+  text-align: center;
+  color: white;
+}
+
+.ja {
+  display: flex;
+  padding-left: 430px;
+  margin-top: 15px;
+}
+
+.ja .btn1 {
+  background: #02817d;
+  color: rgb(255, 255, 255);
+  padding: 10px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0px;
+  margin-left: 30%;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+/* 푸터 */
+footer {
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 20px;
+  height: 230px;
+}
+
+.logo1 {
+  margin-top: 30px;
+  padding-right: 1200px;
+}
+
+.ft1 {
+  text-align: left;
+  margin-top: -45px;
+  padding-left: 570px;
+  color: #505050;
+}
+
+.ft1 strong {
+  font-weight: bold;
+  color: black;
+}
+
+.ft1 p {
+  line-height: 30px;
+}
+
+.ft2 {
+  text-align: left;
+  margin-top: -117px;
+  padding-left: 1100px;
+  color: #505050;
+}
+
+.ft2 strong {
+  font-weight: bold;
+  color: black;
+}
+
+.ft2 p {
+  line-height: 30px;
+}
