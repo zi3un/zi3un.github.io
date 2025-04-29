@@ -7,549 +7,424 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="s.css">
+    <link rel="stylesheet" href="s.css" />
     <title>지구톡</title>
     <style>
-      
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html, body {
-      overflow-x: hidden;  
-      overflow-y: auto; 
-      width: 100%;
-      height: 100%;
-      scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: "Noto Sans KR", sans-serif;
-        line-height: 1.6;
-        color: #000000;
-        background-color: #f4f4f4;
-      }
-
-      a {
-    color: rgb(255, 255, 255); 
-    text-decoration: none; 
-    }
-
-     a:hover {
-     color: #ffffff; 
-     }
-
-     .nav a {
-    color: rgb(255, 255, 255);
-    }
-
-   .dropdown a {
-    color: rgb(0, 0, 0);
-   }
-
-
-      /* 헤더 */
-      main {
-            width: auto;
-            height: 980px;
-            margin: 0 auto; 
-            background: url(img/bn15.jpg);
-            background-size: cover;
-            background-size: 100% 100%;
-            background-position: center;
-            transition: transform 0.6s ease;
-            
-        }
-
-        header {
-            padding-top: 10px;
-            display: flex;
-            justify-content: flex-start;
-        }
-
-        .logo img{
-            width: auto;
-            height: auto;
-            margin-left: 30%;
-        }
-
-        @keyframes floating {
-            0%   { transform: translateY(0); }
-            50%  { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
-        }
-
-        .floating-img {
-            position: absolute;
-            bottom: 30px;
-            right: 40px;
-            width: 170px;
-            animation: floating 2s ease-in-out infinite;
-            transition: transform 0.2s ease-out;
-            z-index: 10;
-        }
-
-        nav ul {
-          display: flex;
-          margin-left: 179%;
-          width: max-content;
-          color: white;
-
-
-        }
-
-        nav ul li {
-            font-size: 15px;
-            display: inline-block;
-            margin: 5px 12px;
-            padding-left: 0px;
-            position: relative;
-            border-bottom: 2px solid transparent;
-            transition: border-bottom 0.3s ease;
-            cursor: pointer;
-        }
-
-        nav ul li .dropdown {
-            display: none;
-            list-style: none;
-            position: absolute;
-            top: 100%;
-            left: -180%;
-            background-color: white;
-            color: black;
-            padding: 5px;
-            border-radius: 0px;
-            width: 130px;
-            height: auto;
-            text-align: center;
-        }
-
-        nav ul li:hover {
-        transform: scale(1.05);
-        }
-
-        nav ul li .dropdown {
-          display: none;
-          list-style: none;
-          position: absolute;
-          top: 120%;
-          left: -180%;
-          background-color: white;
-          color: black;
-          padding: 5px;
-          border-radius: 0px;
-          width: 130px;
-          height: auto;
-          text-align: center;
-        }
-
-
-        nav ul li:hover .dropdown {
-            display: block;
-        }
-
-        nav ul li .dropdown li {
-            margin: 5px 0;
-            border-bottom: 2px solid transparent;
-           transition: border-bottom 0.3s ease; 
-          cursor: pointer;
-        }
-
-        nav ul li .dropdown li:hover {
-       border-bottom: 1.5px solid #2FA9A3;
-       transform: scale(1.05);
-        }
-
-        nav ul li .dropdown li:active {
-          transform: scale(1);
-        }
-
-
-      /* 소개 섹션 */
-      .intro {
-        text-align: center;
-        padding: 100px;
-        width: auto;
-        height: 980px;
-        background: url(img/bn39.jpg);
-        background-size: cover;
-        display: block;
-        color: white;
-        line-height: 2.5;
-        font-size: 16px;
-      }
-
-      .intro p {
-        font-weight: bold;
-        color:#02817D;
-        font-size: 16px;
-      }
-
-      .btn {
-        background: #B3FDDA;
-        color: #02817D;
-        padding: 10px 20px;
-        border: 2.3px solid #2FA9A3;
-        cursor: pointer;
-        border-radius: 25px;
-        font-size: 15px;
-      }
-
-      .btn1 {
-        background: #FFF8BC;
-        color:  #02817D;
-        padding: 10px 20px;
-        border: 2.3px solid #2FA9A3;
-        cursor: pointer;
-        border-radius: 25px;
-        font-size: 15px;
-      }
-
-      .jigu-box {
-        position: relative;
-        max-width: 50%; 
-        height: auto;
-      }
-
-     .jigu-box img {
-      position: absolute;
-      top: -120px;  
-     right: -550px;   
-      width: 20%;
-      height: auto;
-      }
-
-      .jigu-box2 {
-        position: relative;
-        max-width: 40%; 
-        height: auto;
-      }
-
-     .jigu-box2 img {
-      position: absolute;
-      top: -60px; 
-      left: 390px;  
-      width: 20%;
-      height: auto;
-      }
-
-      .jigu-box3 {
-        position: relative;
-        max-width: 35%; 
-        height: auto;
-      }
-
-     .jigu-box3 img {
-      position: absolute;
-      top: 310px;  
-      right: -1120px;  
-      width: 20%;
-      height: auto;
-      }
-
-      .jigu-box4 {
-        position: relative;
-        max-width: 50%; 
-        height: auto;
-      }
-
-     .jigu-box4 img {
-      position: absolute;
-      top: 180px; 
-      left: 10px;   
-      width: 20%;
-      height: auto;
-      }
-
-      .jigu-box5 {
-        position: relative;
-        max-width: 33%; 
-        height: auto;
-      }
-
-     .jigu-box5 img {
-      position: absolute;
-      top: -20px;  
-      right: -1180px;  
-      width: 20%;
-      height: auto;
-      }
-
-      .jigu-box6 {
-        position: relative;
-        max-width: 35%; 
-        height: auto;
-      }
-
-     .jigu-box6 img {
-      position: absolute;
-      top: -120px;  
-      right: 500px;  
-      width: 20%;
-      height: auto;
-      }
-
-
-
-
-      /* 실천 방법 섹션 */
-      .actions {
-        background: #fff;
-        padding: 130px;
-        height: 785px;
-        text-align: left;
-
-      }
-
-      .sm1-text p {
-        justify-content: left;
-        color:#00C89D;
-        font-weight: bold;
-        margin-left: 55.1%;
-        margin-bottom: -24px;
-      }
-
-      .sm1-text h2{
-        justify-content: left;
-        margin-left: 55%;
-        margin-top: 25px;
-      }
-        .sm1 {
-        display: flex;
-        margin-left: -70px;
-        margin-top: -85px;
-        margin-right: 350px;
-      }
-
-      .swiper {
-        width: 500px;
-        height: 500px;
-        border-radius: 35px;
-        overflow: hidden; 
-      }
-      .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .swiper-button-next, .swiper-button-prev {
-        color: rgb(255, 255, 255);
-      }
-
-      .swiper-pagination {
-      bottom: 10px;
-    }
-
-        .sm2 {
-            display: flex;
-            padding-left: 380px;
-            margin-top: -320px;
-            
-        }
-
-        .sm2 .btn1 {
-        background: #00C89D;
-        color: rgb(255, 255, 255);
-        padding: 20px 40px;
-        border: none;
-        cursor: pointer;
-        border-radius: 45px;
-        margin-left: 41.5%;
-        font-size: 17px;
-        font-weight: bold;
-        
-      }
-
-        .sm3 {
-            display: flex;
-            gap: 10px;
-            padding-left: 380px;
-            margin-top: 105px;
-            margin-left: 32%;
-            
-
-        }
-        .sm3 .box1 {
-            background: rgb(255, 220, 145);
-            width: 150px;
-            height:150px;
-            border-radius: 30px;
-            
-        } 
-
-        .sm3 .box1:nth-child(1) {
-        background: url(img/i2.jpg); /* 첫 번째 박스 이미지 */
-        background-size: cover;
-        background-position: center;
-        }
-
-        .sm3 .box1:nth-child(2) {
-        background: url(img/i3.jpg); /* 첫 번째 박스 이미지 */
-        background-size: cover;
-        background-position: center;
-        }
-
-        .sm3 .box1:nth-child(3) {
-        background: url(img/i4.jpg); /* 첫 번째 박스 이미지 */
-        background-size: cover;
-        background-position: center;
-        }
-        
-
-
-
-      /* 슬로건 섹션 */
-      .site {
-            height: 980px;
-            background: url(img/bn46.jpg);
-            background-size: cover;
-            background-size: 100% 100%;
-            /* 컬러 지우고 url() < 여기에다 이미지 넣기 */
-            
-        }
-
-
-      /* 영상 섹션 */
-
+   /* 기본 설정 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: #f4f4f4;
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a:hover {
+  color: #fff;
+}
+
+/* 헤더 */
+/* 기본 레이아웃 스타일 */
+main {
+  width: 100%;
+  height: 650px;
+  background: url(img/bn53.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0.8rem;
+  background-color: transparent;
+}
+
+.logo img {
+  width: 160px;
+  padding-bottom: 570px;
+}
+
+.floating-img {
+  margin-top: 460px;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  animation: floating 2s ease-in-out infinite;
+  z-index: 10;
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* 네비게이션 메뉴 */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.main-menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+
+/* 드롭다운 메뉴 스타일 */
+.join .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;  /* 서브 메뉴가 부모 메뉴 바로 아래에 위치하도록 */
+  left: 0;
+  border-radius: 5px;
+}
+
+.join:hover .dropdown {
+  display: block; /* 부모 메뉴에 마우스를 올리면 서브 메뉴가 보이도록 */
+}
+
+.dropdown li {
+  padding: 20px;
+  list-style: none;
+}
+
+.dropdown li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* 햄버거 메뉴 스타일 */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px; /* 오른쪽에 위치하도록 수정 */
+  background-color: transparent; /* 배경을 투명하게 설정 */
+  border: none; /* 만약 테두리가 있다면 제거 */
+  z-index:1000;
+}
+
+.hamburger-icon {
+  width: 30px;
+  height: 4px;
+  background-color: white; /* 햄버거 아이콘 색상은 그대로 흰색으로 설정 */
+}
+/* 모바일 햄버거 메뉴 활성화 */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .nav.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0; /* 사이드 메뉴가 왼쪽으로 나옴 */
+    width: 250px; /* 사이드 메뉴 너비 */
+    height: 100%;
+    padding-top: 50px; /* 메뉴 높이에 맞춰 여백 */
+  }
+
+  .main-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu-item a {
+    font-size: 1rem;
+  }
+
+  .join .dropdown {
+    position: static; /* 서브 메뉴의 위치를 부모 메뉴에 맞춤 */
+    width: 100%;
+    display: block; /* 모바일에서는 항상 보이게 설정 */
+  }
+
+  .dropdown li {
+    padding: 10px;
     
-      .bg1{
-        height: auto;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding-top: 60px;
-        padding-bottom: 100px;
-        background: url(img/bn23.jpg);
-        background-size: cover;
-        background-size: 100% 100%;
-      }
+  }
+  
+}
 
-      .bg1 p {
-        text-align: center;
-        font-size: 22px;
-        padding-bottom: 25px;
-        padding-top: 10px;
-        color: white;
-      }
+/* 사이드 메뉴 */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px; /* 초기 위치는 화면 왼쪽 밖으로 */
+  width: 250px;
+  height: 100%;
+  background-color: #ffffff;
+  transition: left 0.3s ease;
+  padding-top: 60px;
+}
 
-      .bg1 h2 {
-        text-align: center;
-        color: white;
-      }
+.side-menu.open {
+  left: 0; /* 메뉴가 열리면 왼쪽으로 */
+}
 
-    
+.side-main-menu {
+  list-style: none;
+  padding: 0;
+}
 
-      .video-box {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: 30px;
-      }
+.side-menu-item {
+  margin: 15px 0;
+}
 
-      .video-box video {
-        width: 100%;
-        max-width: 1000px;
-        border-radius: 80px;
-        margin-top: 50px;
-        padding-bottom: 25px;
-      }
+.side-menu-item a {
+  color: #2FA9A3;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  transform: scale(1.05);
+  font-size: 0.9rem;
+}
 
-      /* 지톡이 섹션 */
+.side-submenu {
+  display: none;
+  padding-left: 20px;
+  list-style: none;
+  text-align: left;
+}
 
-      .bg2 {
-        width: 100%;
-        height: 2400px;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding: 80px;
-        background: url(img/bn45.jpg);
-        background-size: 100% 100%;
-      }
+.side-menu-item:hover .side-submenu {
+  display: block;
+}
 
-      .bg2 h2 {
-        font-size: 25px;
-        color: rgb(6, 97, 55);
-        margin-top: 20px;
-        padding-bottom: 40px;
-        padding-left: 110px;
-      }
+/* 닫기 버튼 */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  left: 20px; /* 닫기 버튼 위치를 왼쪽 상단으로 */
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #2FA9A3;
+  cursor: pointer;
+}
 
-      .png-box {
-        position: relative;
-        max-width: 100%;
-        height: auto;
-      }
-     .png-box img {
-      position: absolute;
-      top: -1470px; 
-      margin-top: 90px;
-      right: 0; 
-      width: 20%;
-      height: auto;
-      }
 
-      .png-box1 {
-        position: relative;
-        max-width: 100%; 
-        height: auto;
-    
-      }
-     .png-box1 img {
-      position: absolute;
-      top: -550px;
-      width: 20%;
-      height: auto;
-      }
 
-      .png-box2 {
-        position: relative;
-        max-width: 30%;
-        height: auto;
-    
-      }
-     .png-box2 img {
-      position: absolute;
-      top: -200px;  
-      right: -500px;
-      width: 20%;
-      height: auto;
-      }
+.menu-item a:hover {
+  transform: scale(0.6); /* 10% 크기 증가 */
+}
 
-      .img-box{
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            padding-bottom: 700px;
-        }
+/* 사이드 메뉴에서 메뉴 항목에 커서를 올리면 글자 크기 커지기 */
+.side-menu-item a:hover {
+  transform: scale(1.1); /* 10% 크기 증가 */
+}
 
-        .img-box .box{
-            margin: 1%;
-            background: rgb(112, 199, 148);
-            width: 350px;
-            height: 350px;
-            border-radius: 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden; 
-            transition: transform 0.3s ease;
-        }
-        .img-box .box:hover {
+
+/* 사이드 메뉴 항목에 마우스 오버 시 색상 변화 */
+.side-menu-item a:hover {
+  background-color: #2FA9A3;  /* 배경 색상 변경 */
+  color: white;  /* 글자 색상 변경 */
+  transition: background-color 0.1s ease, color 0.5s ease; /* 부드러운 색상 및 배경 전환 */
+}
+
+/* 사이드 메뉴 항목의 크기 조정 */
+.side-menu-item a {
+  padding: 15px 25px; /* 좌우, 상하 여백 조정 */
+  font-size: 0.9rem;  /* 글자 크기 조정 */
+  display: inline-block; /* 링크를 블록처럼 표시하여 크기 조절 가능하게 함 */
+  width: 240px; /* 너비를 고정하여 크기 조절 */
+}
+
+
+
+/* 소개 섹션 */
+.intro {
+  background: url(img/bn39.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 50px 40px;
+  text-align: center;
+  height: auto;
+  font-size: 1rem;
+}
+
+.intro h2 {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+}
+
+.intro p {
+  color: #02817D;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+
+
+.btn, .btn1 {
+  padding: 7px 15px;
+  border-radius: 25px;
+  border: 2px solid #2FA9A3;
+  margin: 10px;
+  font-size: 0.8rem;
+}
+.btn {
+  background: #B3FDDA;
+  color: #02817D;
+}
+.btn1 {
+  background: #FFF8BC;
+  color: #02817D;
+}
+
+/* 이미지 박스들 */
+.jigu-box2 img,
+.jigu-box4 img,
+.jigu-box5 img,
+.jigu-box6 img {
+  display: none; /* 모바일에서는 숨김 */
+}
+
+.jigu-box img {
+    width: 25%;
+    margin-left: 80%; 
+}
+
+.jigu-box3 img {
+    width: 20%;
+    margin-right: 80%;
+    padding-bottom: -20%;
+}
+
+/* 실천 방법 섹션 */
+.actions {
+  background: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+.sm1-text h2 {
+  margin: 5px 0;
+  text-align: left;
+}
+.sm1-text p {
+    text-align: left;
+    color:#00C89D;
+    font-weight: bold;
+}
+
+.swiper {
+  width: 100%;
+  max-width: 320px;
+  height: 320px;
+  margin: 0 auto;
+  border-radius: 25px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.sm1 img {
+    width: 100%;
+}
+
+/* 슬로건 */
+.site {
+  background: url(img/bn46.jpg) no-repeat center center;
+  background-size: cover;
+  height: 500px;
+}
+
+/* 영상 섹션 */
+.bg1 {
+  background: url(img/bn23.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 40px 20px;
+}
+.bg1 h2, .bg1 p {
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+}
+.video-box video {
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+/* 지톡이 섹션 */
+.bg2 {
+  background: url(img/bn55.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 40px 40px;
+  width: 100%;
+  height: 1900px;
+}
+.bg2 h2 {
+  color: #066137;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+/* 이미지 박스를 중앙 정렬 */
+.img-box {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+  padding-top: 20px;
+}
+
+
+/* 각 박스를 중앙 정렬 */
+.img-box .box {
+width: 300px;
+ height: 300px;
+  border-radius: 40px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.img-box .box:hover {
         transform: scale(1.05); 
         }
 
-        .img-box .box:nth-child(1) {
+.img-box .box:nth-child(1) {
         background: url(img/mn1.jpg); /* 첫 번째 박스 이미지 */
         background-size: cover;
         background-position: center;
@@ -592,130 +467,161 @@
     opacity: 1; 
 }
 
-        /* 마음톡톡 섹션 */
-       .bg3 {
-        position: relative;
-       background: url(img/bn43.jpg);
-       background-size: cover;
-       background-size: 100% 100%;
-       width: 100%;
-       height: 1300px;
-       padding-left: 3%;
-       padding-top: 3%;
-       }
+.png-box img {
+    width: 65%; /* 이미지 크기 조정 */
+    position: relative; /* 위치를 상대적으로 조정 */
+    left: 160px; /* 이미지를 오른쪽으로 이동 */
+    top: 20px;
+}
 
-        .bg3 span{
-          color:#c1f8f4;
-        }       
-       .bg3 h2 {
-        color: white;
-        font-size: 20px;
-        text-align: center;
-        margin-top: 740px;
-       }
+/* 마음톡톡 섹션 */
+.bg3 {
+  background: url(img/bn56.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 40px 60px;
+  height: 450px;
+}
+ .bg3 p {
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
 
-       .bg3 p {
-        font-size: 15px;
-        text-align: center;
-        color: white;
-       }
+.bg3 h2 {
+  text-align: center;
+  color: white;
+  margin-top: 210px;
+  font-size: 1rem;
+}
+.bg3 span{
+  color:#c1f8f4;
+}      
+.ja {
+  text-align: center;
+  margin-top: 20px;
+}
+.ja .btn1 {
+  padding: 10px 15px;
+  background: #02817D;
+  color: #fff;
+  border: none;
+  font-size: 0.8rem;
+  margin-top: 25px;
+  position: relative; /* 위치를 상대적으로 조정 */
+  left: 180px; /* 이미지를 오른쪽으로 이동 */
+}
 
-       .ja {
-            display: flex;
-            padding-left: 430px;
-            margin-top: 15px;
-            
-        }
+/* 푸터 */
+footer {
+  background: #fff;
+  color: #555555;
+  padding: 30px 20px;
+  font-size: 0.8rem;
+  text-align: center;
+}
 
-        .ja .btn1 {
-        background: #02817D;
-        color: rgb(255, 255, 255);
-        padding: 10px 30px;
-        border: none;
-        cursor: pointer;
-        border-radius: 0px;
-        margin-left: 30%;
-        font-size: 17px;
-        font-weight: bold;
-        
-      }
+.logo1 img {
+    padding-bottom: 10px;
+}
 
-
-      /* 푸터 */
-      footer {
-        background: #ffffff;
-        color: rgb(0, 0, 0);
-        text-align: center;
-        padding: 20px;
-        height: 230px;
-      }
-
-      .logo1 {
-        margin-top: 30px;
-        padding-right: 1200px;
-      }
-
-      .ft1 {
-        text-align: left;
-        margin-top: -45px;
-        padding-left: 570px;
-        color: #505050;
-      }
-
-      .ft1 strong {
-        font-weight: bold;
-        color: black;
-      }
-
-      .ft1 p {
-        line-height: 30px;
-      }
-
-      .ft2 {
-        text-align: left;
-        margin-top: -117px;
-        padding-left: 1100px;
-        color: #505050;
-      }
-
-      .ft2 strong {
-        font-weight: bold;
-        color: black;
-      }
-
-      .ft2 p {
-        line-height: 30px;
-      }
-    </style>
+.logo1, .ft1, .ft2 {
+  display: block;
+  margin: 13px 0;
+  text-align: left;
+}
+</style>
   </head>
 
   <body>
     <!-- 헤더 -->
     <main>
         <header class="header">
-            <div class="logo">
-            <img src="img/logo5.png" class="logo-img"></div>
-            <img src="img/png8.png" class="floating-img">
-                  <nav class="nav">
-                      <ul>
-                          <li>'지구톡톡'이야기</li>
-                          <li class="join">
-                            <a href="sub.html">
-                            '지톡이'합류하기</a>
-                            <ul class="dropdown">
-                              <li>
-                                <a href="sub.html"> 2023 지톡이</a>
-                               </li>
-                              <li>2024 지톡이 </li>
-                            </ul>
-                          </li>
-                          <li>오늘의'지톡이'</li>
-                          <li>'지톡이들' 다시 모일 시간</li>
-                      </ul>
-                  </nav>
+          <div class="logo">
+            <img src="img/logo5.png" class="logo-img" alt="Logo" />
+          </div>
+          <img src="img/png8.png" class="floating-img" alt="Floating Image" />
+  
+          <!-- 네비게이션 메뉴 -->
+          <nav class="nav">
+            <ul class="main-menu">
+              <li class="menu-item">
+                <a href="#">'지구톡톡' 이야기</a>
+              </li>
+              <li class="menu-item join">
+                <a href="#">'지톡이' 합류하기</a>
+                <ul class="dropdown">
+                  <li><a href="sub2023jitok3.html">2023 지톡이</a></li>
+                  <li><a href="#">2024 지톡이</a></li>
+                </ul>
+              </li>
+              <li class="menu-item">
+                <a href="#">오늘의 '지톡이'</a>
+              </li>
+              <li class="menu-item">
+                <a href="#">'지톡이들' 다시 모일 시간</a>
+              </li>
+            </ul>
+          </nav>
+  
+          <!-- 햄버거 메뉴 버튼 -->
+          <button class="menu-toggle">
+            <span class="hamburger-icon"></span>
+            <span class="hamburger-icon"></span>
+            <span class="hamburger-icon"></span>
+          </button>
         </header>
-    </main>
-      
+      </main>
+  
+      <!-- 사이드 메뉴 -->
+      <div class="side-menu">
+        <button class="close-btn">×</button>
+        <ul class="side-main-menu">
+          <li class="side-menu-item">
+            <a href="#">'지구톡톡' 이야기</a>
+          </li>
+          <li class="side-menu-item">
+            <a href="sub2023jitok3.html">'지톡이' 합류하기</a>
+            <ul class="side-submenu">
+              <li><a href="sub2023jitok3.html">2023 지톡이</a></li>
+              <li><a href="#">2024 지톡이</a></li>
+            </ul>
+          </li>
+          <li class="side-menu-item">
+            <a href="#">오늘의 '지톡이'</a>
+          </li>
+          <li class="side-menu-item">
+            <a href="#">'지톡이들' 다시 모일 시간</a>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- 자바스크립트 코드 -->
+      <script>
+      document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const sideMenu = document.querySelector('.side-menu');
+  const closeBtn = document.querySelector('.close-btn');
+
+  menuToggle.addEventListener('click', () => {
+    sideMenu.classList.add('open');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    sideMenu.classList.remove('open');
+  });
+
+  // 사이드 메뉴 서브메뉴 토글
+  const sideMenuItems = document.querySelectorAll('.side-menu-item > a');
+  sideMenuItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const parent = item.parentElement;
+      parent.classList.toggle('active');
+    });
+  });
+});
+      </script>
 
     <!-- 소개 섹션 -->
     <section class="intro">
@@ -728,22 +634,16 @@
       <button class="btn1">#쓰레기대란</button>
       <div class="jigu-box">
         <img src="img/g1.gif"></div>
-      </div>
       <div class="jigu-box2">
         <img src="img/g2.png"></div>
-      </div>
       <div class="jigu-box3">
         <img src="img/g3.png"></div>
-      </div>
       <div class="jigu-box4">
         <img src="img/g4.gif"></div>
-      </div>
       <div class="jigu-box5">
         <img src="img/g5.png"></div>
-      </div>
       <div class="jigu-box6">
         <img src="img/g6.png"></div>
-      </div>
     </section>
 
     <!-- 실천 방법 섹션 -->
@@ -761,15 +661,7 @@
                   <div class="swiper-slide"><img src="img/i4.jpg" /></div>
                 </div>
             </div>
-        </div>
-        <div class="sm2">
-            <button class="btn1">view all campion </button>
-        </div>
-        <div class="sm3">
-            <div class="box1"></div>
-            <div class="box1"></div>
-            <div class="box1"></div>
-        </div>     
+        </div>  
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
@@ -837,12 +729,6 @@
       <div class="png-box">
           <img src="img/png1.png" alt="PNG 1">
       </div>
-      <div class="png-box1">
-          <img src="img/png2.png" alt="PNG 2">
-      </div>
-      <div class="png-box2">
-          <img src="img/png3.png" alt="PNG 3">
-      </div>
   </div>
  
 
@@ -876,3 +762,5 @@
     </footer>
   </body>
 </html>
+
+
