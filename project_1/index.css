@@ -1,0 +1,369 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  height: 970px;
+  background: url(img/m26.jpg);
+  background-size: 100%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+header {
+  background: rgb(135, 206, 235);
+  display: flex;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+
+.logo {
+  width: auto;
+  margin-right: 2%;
+  padding: 0.8rem;
+  color: white;
+}
+
+.logo img {
+  width: 110px;
+}
+
+nav ul {
+  width: max-content;
+  color: white;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 35px 40px;
+  padding-top: 0.5rem;
+  font-weight: bold;
+}
+
+.clinic {
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 3rem;
+}
+
+.clinic p {
+  font-size: 1.2rem;
+}
+
+.clinic h2 {
+  color: rgb(135, 206, 235);
+}
+
+.sm1 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 2.4rem;
+  padding-bottom: 2.4rem;
+  gap: 20px;
+}
+
+.sm1 img {
+  width: 32%;
+  /* 세 개의 이미지가 가로로 배열되도록 */
+  height: auto;
+  border-radius: 50px;
+  margin: 10px 0;
+}
+
+.stress-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stress-center img {
+  width: 100%;
+  height: auto;
+  padding-top: 3rem;
+}
+
+.LIV {
+  position: relative;
+  text-align: center;
+  font-size: 3rem;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.LIV img {
+  position: absolute;
+  left: 0;
+  top: 10%;
+  padding-top: 4rem;
+  width: 100%;
+  height: auto;
+}
+
+.sm1 {
+  display: flex;
+  justify-content: right;
+  margin-top: 20px;
+  padding-right: 0rem;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  top: -30px;
+  direction: rtl;
+}
+
+.number {
+  position: absolute;
+  top: 150px;
+  right: 30px;
+  font-size: 1rem;
+  font-weight: lighter;
+}
+
+.dogcat {
+  display: flex;
+  align-items: center;
+}
+
+.image-box {
+  position: relative;
+  display: inline-block;
+}
+
+.image-box img {
+  padding-top: 10px;
+  width: 60%;
+  border-radius: 150px;
+}
+
+.dogcat img {
+  padding-top: 60%;
+  width: 100%;
+  height: auto;
+}
+
+.slogan {
+  padding-top: 10%;
+}
+
+.slogan-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.slogan-box img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.text-box img {
+  width: 100%;
+  max-width: 80%;
+}
+
+.bg1 {
+  position: relative;
+  background: url(img/m34.jpg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 20%;
+  padding-top: 3%;
+  padding-bottom: 5rem;
+  padding-left: 3%;
+}
+
+.bg1 h2 {
+  font-size: 2rem;
+}
+
+.bg1 p {
+  font-size: 1rem;
+}
+
+.re-sm1 {
+  position: relative;
+  display: inline-block;
+}
+
+.re-sm1 img {
+  width: 100%;
+  max-width: 80%;
+  display: block;
+}
+
+.re-text-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-align: left;
+}
+
+.bg2 {
+  text-align: center;
+  padding: 4rem 0rem;
+  color: white;
+}
+
+.box1 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.sm2 {
+  text-align: center;
+  border-radius: 25px;
+  width: 25%;
+  height: 15%;
+}
+
+.sm2 img {
+  padding-top: 5%;
+  width: 15%;
+  height: auto;
+}
+
+.sm2 p {
+  color: black;
+}
+
+.footer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
+  color: white;
+}
+
+.footer h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-left: 3rem;
+}
+
+.footer p {
+  font-size: 1rem;
+  padding-left: 3rem;
+}
+
+.footer h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-left: 3rem;
+  position: relative;
+}
+
+/* Mobile Styles */
+@media (max-width: 500px) {
+  .header,
+  .sm1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sm1 {
+    margin: 10px auto;
+  }
+
+  .sm1 img {
+    width: 100%;
+    /* 이미지를 더 작게 */
+  }
+
+  body {
+    font-size: 0.8rem;
+  }
+
+  main {
+    width: 500px;
+    height: 450px;
+  }
+
+  .logo {
+    margin-right: 0;
+    margin-bottom: 2px;
+  }
+
+  nav {
+    width: 100%;
+    margin-top: 5px;
+    padding-right: 5rem;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  nav ul li {
+    margin: auto;
+  }
+
+  .slogan-box img {
+    margin-left: -3%;
+    padding-left: 3rem;
+  }
+
+  .footer h2,
+  .footer p {
+    font-size: 1rem;
+    padding-left: 1rem;
+  }
+
+  .footer h3 {
+    font-size: 1.2rem;
+    position: relative;
+    top: 0;
+  }
+
+  .sm2 {
+    width: 30%;
+    margin-left: 1.1rem;
+  }
+
+  .sm2 img {
+    width: 30%;
+  }
+
+  .re-text-box {
+    font-size: 2rem;
+  }
+
+  .dogcat img {
+    margin-top: 50px;
+    padding-bottom: 20px;
+  }
+
+  .bg1 {
+    padding-bottom: 20px;
+  }
+
+  .bg1 h2 {
+    font-size: 1rem;
+  }
+
+  .bg1 p {
+    font-size: 0.8rem;
+  }
+  .footer h2 {
+    padding-left: 3%;
+  }
+
+  .footer h3 {
+    padding-left: 3%;
+  }
+}
