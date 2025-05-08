@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="s.css" />
+    <title>지구톡</title>
+    <style>
+   /* 기본 설정 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: #f4f4f4;
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a:hover {
+  color: #fff;
+}
+
+/* 헤더 */
+/* 기본 레이아웃 스타일 */
+main {
+  width: 100%;
+  height: 650px;
+  background: url(img/bn53.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0.8rem;
+  background-color: transparent;
+}
+
+.logo img {
+  width: 160px;
+  padding-bottom: 570px;
+}
+
+.floating-img {
+  margin-top: 460px;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  animation: floating 2s ease-in-out infinite;
+  z-index: 10;
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* 네비게이션 메뉴 */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.main-menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+
+/* 드롭다운 메뉴 스타일 */
+.join .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;  /* 서브 메뉴가 부모 메뉴 바로 아래에 위치하도록 */
+  left: 0;
+  border-radius: 5px;
+}
+
+.join:hover .dropdown {
+  display: block; /* 부모 메뉴에 마우스를 올리면 서브 메뉴가 보이도록 */
+}
+
+.dropdown li {
+  padding: 20px;
+  list-style: none;
+}
+
+.dropdown li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* 햄버거 메뉴 스타일 */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px; /* 오른쪽에 위치하도록 수정 */
+  background-color: transparent; /* 배경을 투명하게 설정 */
+  border: none; /* 만약 테두리가 있다면 제거 */
+  z-index:1000;
+}
+
+.hamburger-icon {
+  width: 30px;
+  height: 4px;
+  background-color: white; /* 햄버거 아이콘 색상은 그대로 흰색으로 설정 */
+}
+/* 모바일 햄버거 메뉴 활성화 */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .nav.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0; /* 사이드 메뉴가 왼쪽으로 나옴 */
+    width: 250px; /* 사이드 메뉴 너비 */
+    height: 100%;
+    padding-top: 50px; /* 메뉴 높이에 맞춰 여백 */
+  }
+
+  .main-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu-item a {
+    font-size: 1rem;
+  }
+
+  .join .dropdown {
+    position: static; /* 서브 메뉴의 위치를 부모 메뉴에 맞춤 */
+    width: 100%;
+    display: block; /* 모바일에서는 항상 보이게 설정 */
+  }
+
+  .dropdown li {
+    padding: 10px;
+    
+  }
+  
+}
+
+/* 사이드 메뉴 */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px; /* 초기 위치는 화면 왼쪽 밖으로 */
+  width: 250px;
+  height: 100%;
+  background-color: #ffffff;
+  transition: left 0.3s ease;
+  padding-top: 60px;
+}
+
+.side-menu.open {
+  left: 0; /* 메뉴가 열리면 왼쪽으로 */
+}
+
+.side-main-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu-item {
+  margin: 15px 0;
+}
+
+.side-menu-item a {
+  color: #2FA9A3;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  transform: scale(1.05);
+  font-size: 0.9rem;
+}
+
+.side-submenu {
+  display: none;
+  padding-left: 20px;
+  list-style: none;
+  text-align: left;
+}
+
+.side-menu-item:hover .side-submenu {
+  display: block;
+}
+
+/* 닫기 버튼 */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  left: 20px; /* 닫기 버튼 위치를 왼쪽 상단으로 */
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #2FA9A3;
+  cursor: pointer;
+}
+
+
+
+.menu-item a:hover {
+  transform: scale(0.6); /* 10% 크기 증가 */
+}
+
+/* 사이드 메뉴에서 메뉴 항목에 커서를 올리면 글자 크기 커지기 */
+.side-menu-item a:hover {
+  transform: scale(1.1); /* 10% 크기 증가 */
+}
+
+
+/* 사이드 메뉴 항목에 마우스 오버 시 색상 변화 */
+.side-menu-item a:hover {
+  background-color: #2FA9A3;  /* 배경 색상 변경 */
+  color: white;  /* 글자 색상 변경 */
+  transition: background-color 0.1s ease, color 0.5s ease; /* 부드러운 색상 및 배경 전환 */
+}
+
+/* 사이드 메뉴 항목의 크기 조정 */
+.side-menu-item a {
+  padding: 15px 25px; /* 좌우, 상하 여백 조정 */
+  font-size: 0.9rem;  /* 글자 크기 조정 */
+  display: inline-block; /* 링크를 블록처럼 표시하여 크기 조절 가능하게 함 */
+  width: 240px; /* 너비를 고정하여 크기 조절 */
+}
+
+
+
+/* 소개 섹션 */
+.intro {
+  background: url(img/bn39.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 50px 40px;
+  text-align: center;
+  height: auto;
+  font-size: 1rem;
+}
+
+.intro h2 {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+}
+
+.intro p {
+  color: #02817D;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+
+
+.btn, .btn1 {
+  padding: 7px 15px;
+  border-radius: 25px;
+  border: 2px solid #2FA9A3;
+  margin: 10px;
+  font-size: 0.8rem;
+}
+.btn {
+  background: #B3FDDA;
+  color: #02817D;
+}
+.btn1 {
+  background: #FFF8BC;
+  color: #02817D;
+}
+
+/* 이미지 박스들 */
+.jigu-box2 img,
+.jigu-box4 img,
+.jigu-box5 img,
+.jigu-box6 img {
+  display: none; /* 모바일에서는 숨김 */
+}
+
+.jigu-box img {
+    width: 25%;
+    margin-left: 80%; 
+}
+
+.jigu-box3 img {
+    width: 20%;
+    margin-right: 80%;
+    padding-bottom: -20%;
+}
+
+/* 실천 방법 섹션 */
+.actions {
+  background: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+.sm1-text h2 {
+  margin: 5px 0;
+  text-align: left;
+}
+.sm1-text p {
+    text-align: left;
+    color:#00C89D;
+    font-weight: bold;
+}
+
+.swiper {
+  width: 100%;
+  max-width: 320px;
+  height: 320px;
+  margin: 0 auto;
+  border-radius: 25px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.sm1 img {
+    width: 100%;
+}
+
+/* 슬로건 */
+.site {
+  background: url(img/bn46.jpg) no-repeat center center;
+  background-size: cover;
+  height: 500px;
+}
+
+/* 영상 섹션 */
+.bg1 {
+  background: url(img/bn23.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 40px 20px;
+}
+.bg1 h2, .bg1 p {
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+}
+.video-box video {
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+/* 지톡이 섹션 */
+.bg2 {
+  background: url(img/bn55.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 40px 40px;
+  width: 100%;
+  height: 1900px;
+}
+.bg2 h2 {
+  color: #066137;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+/* 이미지 박스를 중앙 정렬 */
+.img-box {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+  padding-top: 20px;
+}
+
+
+/* 각 박스를 중앙 정렬 */
+.img-box .box {
+width: 300px;
+ height: 300px;
+  border-radius: 40px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.img-box .box:hover {
+        transform: scale(1.05); 
+        }
+
+.img-box .box:nth-child(1) {
+        background: url(img/mn1.jpg); /* 첫 번째 박스 이미지 */
+        background-size: cover;
+        background-position: center;
+        }
+
+        .img-box .box:nth-child(2) {
+        background: url(img/mn2.jpg); /* 첫 번째 박스 이미지 */
+        background-size: cover;
+        background-position: center;
+        }
+
+        .img-box .box:nth-child(3) {
+        background: url(img/mn3.jpg); /* 첫 번째 박스 이미지 */
+        background-size: cover;
+        background-position: center;
+        }
+
+        .img-box .box:nth-child(4) {
+        background: url(img/mn4.jpg); /* 첫 번째 박스 이미지 */
+        background-size: cover;
+        background-position: center;
+        }
+
+        .img-box .box .text-box {
+    position: absolute;
+    bottom: -60px; 
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    color:  #00C89D;
+    padding: 20px;
+    text-align: left;
+    border-radius: 0 0 40px 40px;
+    opacity: 0; 
+    transition: transform 0.5s ease, opacity 0.5s ease;  
+}
+
+.img-box .box:hover .text-box {
+    transform: translateY(-60px);  
+    opacity: 1; 
+}
+
+.png-box img {
+    width: 65%; /* 이미지 크기 조정 */
+    position: relative; /* 위치를 상대적으로 조정 */
+    left: 160px; /* 이미지를 오른쪽으로 이동 */
+    top: 20px;
+}
+
+/* 마음톡톡 섹션 */
+.bg3 {
+  background: url(img/bn56.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 40px 60px;
+  height: 450px;
+}
+ .bg3 p {
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
+
+.bg3 h2 {
+  text-align: center;
+  color: white;
+  margin-top: 210px;
+  font-size: 1rem;
+}
+.bg3 span{
+  color:#c1f8f4;
+}      
+.ja {
+  text-align: center;
+  margin-top: 20px;
+}
+.ja .btn1 {
+  padding: 10px 15px;
+  background: #02817D;
+  color: #fff;
+  border: none;
+  font-size: 0.8rem;
+  margin-top: 25px;
+  position: relative; /* 위치를 상대적으로 조정 */
+  left: 180px; /* 이미지를 오른쪽으로 이동 */
+}
+
+/* 푸터 */
+footer {
+  background: #fff;
+  color: #555555;
+  padding: 30px 20px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.logo1 img {
+    padding-bottom: 10px;
+}
+
+.logo1, .ft1, .ft2 {
+  display: block;
+  margin: 13px 0;
+  text-align: left;
+}
+</style>
+  </head>
+
+  <body>
+    <!-- 헤더 -->
+    <main>
+        <header class="header">
+          <div class="logo">
+            <img src="img/logo5.png" class="logo-img" alt="Logo" />
+          </div>
+          <img src="img/png8.png" class="floating-img" alt="Floating Image" />
+  
+          <!-- 네비게이션 메뉴 -->
+          <nav class="nav">
+            <ul class="main-menu">
+              <li class="menu-item">
+                <a href="#">'지구톡톡' 이야기</a>
+              </li>
+              <li class="menu-item join">
+                <a href="#">'지톡이' 합류하기</a>
+                <ul class="dropdown">
+                  <li><a href="sub2023jitok3.html">2023 지톡이</a></li>
+                  <li><a href="#">2024 지톡이</a></li>
+                </ul>
+              </li>
+              <li class="menu-item">
+                <a href="#">오늘의 '지톡이'</a>
+              </li>
+              <li class="menu-item">
+                <a href="#">'지톡이들' 다시 모일 시간</a>
+              </li>
+            </ul>
+          </nav>
+  
+          <!-- 햄버거 메뉴 버튼 -->
+          <button class="menu-toggle">
+            <span class="hamburger-icon"></span>
+            <span class="hamburger-icon"></span>
+            <span class="hamburger-icon"></span>
+          </button>
+        </header>
+      </main>
+  
+      <!-- 사이드 메뉴 -->
+      <div class="side-menu">
+        <button class="close-btn">×</button>
+        <ul class="side-main-menu">
+          <li class="side-menu-item">
+            <a href="#">'지구톡톡' 이야기</a>
+          </li>
+          <li class="side-menu-item">
+            <a href="sub2023jitok3.html">'지톡이' 합류하기</a>
+            <ul class="side-submenu">
+              <li><a href="sub2023jitok3.html">2023 지톡이</a></li>
+              <li><a href="#">2024 지톡이</a></li>
+            </ul>
+          </li>
+          <li class="side-menu-item">
+            <a href="#">오늘의 '지톡이'</a>
+          </li>
+          <li class="side-menu-item">
+            <a href="#">'지톡이들' 다시 모일 시간</a>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- 자바스크립트 코드 -->
+      <script>
+      document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const sideMenu = document.querySelector('.side-menu');
+  const closeBtn = document.querySelector('.close-btn');
+
+  menuToggle.addEventListener('click', () => {
+    sideMenu.classList.add('open');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    sideMenu.classList.remove('open');
+  });
+
+  // 사이드 메뉴 서브메뉴 토글
+  const sideMenuItems = document.querySelectorAll('.side-menu-item > a');
+  sideMenuItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const parent = item.parentElement;
+      parent.classList.toggle('active');
+    });
+  });
+});
+      </script>
+
+    <!-- 소개 섹션 -->
+    <section class="intro">
+      <h2>우리가 사는 지구, 이대로 괜찮을까요?</h2>
+      <p>봄에도 30도를 웃도는 뜨거운 날씨</p>
+      <button class="btn1">#이상기후</button>
+      <button class="btn">#지구온난화</button>
+      <p>더이상 매립하기 어려운 넘쳐나는 쓰레기</p>
+      <button class="btn">#일회용 플라스틱</button>
+      <button class="btn1">#쓰레기대란</button>
+      <div class="jigu-box">
+        <img src="img/g1.gif"></div>
+      <div class="jigu-box2">
+        <img src="img/g2.png"></div>
+      <div class="jigu-box3">
+        <img src="img/g3.png"></div>
+      <div class="jigu-box4">
+        <img src="img/g4.gif"></div>
+      <div class="jigu-box5">
+        <img src="img/g5.png"></div>
+      <div class="jigu-box6">
+        <img src="img/g6.png"></div>
+    </section>
+
+    <!-- 실천 방법 섹션 -->
+    <section class="actions">
+        <div class="sm1-text">
+        <p>바로 지구톡톡으로!</p>
+        <h2>그래서 행동을 시작한 멋진 당신 <br> 
+            __________________________ 하지만 </h2> </div>
+        <div class="sm1">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="img/i1.jpg" /></div>
+                  <div class="swiper-slide"><img src="img/i2.jpg" /></div>
+                  <div class="swiper-slide"><img src="img/i3.jpg" /></div>
+                  <div class="swiper-slide"><img src="img/i4.jpg" /></div>
+                </div>
+            </div>
+        </div>  
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        autoplay: true,
+        loop: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    </script>
+
+    <!-- 슬로건 섹션 -->
+    <div class="site">
+      </div>
+    </div>
+
+    <!-- 영상 섹션 -->
+
+    <div class="bg1">
+      <p>#onlyoneearth</p>
+      <h2> Before it gets hotter 🔥 For the one and only Earth 🌎 </h2>
+      <div class="video-box">
+        <video src="vi.mp4" controls></video>
+      </div>
+    </div>
+
+    <!-- 지톡이 섹션 -->
+
+    <div class="bg2">
+      <h2>지톡이들의 지구를 사랑하는 법!</h2>
+      <div class="img-box">
+          <div class="box">
+              <div class="text-box">
+                  <h3>내 일상 속 텀블러 사용으로 <br>
+                  지구를 사랑해주세요!</h3>
+                  <p>2025.04.02</p>
+              </div>
+          </div>
+          <div class="box">
+              <div class="text-box">
+                  <h3>살아가면서 함께하면 <br> 좋은 행동의 유형</h3>
+                  <p>2025.04.02</p>
+              </div>
+          </div>
+          <div class="box">
+              <div class="text-box">
+                  <h3>오늘의 '지톡이' <br> 우수 활동자 '이땡땡' </h3>
+                  <p>2025.04.02</p>
+              </div>
+          </div>
+          <div class="box">
+              <div class="text-box">
+                  <h3>오늘도 <br> 지구를 사랑합시다! </h3>
+                  <p>2025.04.02</p>
+              </div>
+          </div>
+      </div>
+      <!-- PNG Boxes Section -->
+      <div class="png-box">
+          <img src="img/png1.png" alt="PNG 1">
+      </div>
+  </div>
+ 
+
+    <!--마음톡톡 섹션 -->
+    <div class="bg3">
+        <h2>아이들의 마음 건강을 위한 GS 칼텍스의 또 다른 사회공헌 사업, <span>마음톡톡</span></h2>  
+        <p> GS칼텍스는 지난 2013년부터 아이들의 자아 성장과 사회성 향상을 돕기 위한
+          예술치유 프로그램을 진행하고 있습니다.
+        </p>
+        <div class="ja">
+          <button class="btn1">자세히 보기 </button>
+      </div>
+    </div>
+
+
+
+    <!-- 푸터 -->
+    <footer>
+      <div class="logo1">
+            <img src="img/logo6.png">
+      </div>
+      <div class="ft1">
+      <p><strong>GS칼텍스</strong><br><strong>사업자 등록번호</strong> 116-81-19123 <strong>대표자명</strong> 허세홍, 이두희 <br>
+      <strong>주소</strong> 서울특별시 강남구 논현로 508 GS타워 <br> Copyright © 2023 GS Caltex Corporation. All Right Reserved</p>
+      </div>
+      <div class="ft2">
+        <p><strong>지구톡톡 운영사 (주)코즈웍스</strong> <br> <strong>사업자 등록번호</strong> 211-88-58435 
+        <strong>대표자명</strong> 노재권 <br> <strong>주소</strong> 서울특별시 서초구 서운로13, 2101호 (서초동,중앙로얄오피스텔)
+        <br> <strong>문의처</strong> help_talk@jibutoktok.com
+      </div>
+    </footer>
+  </body>
+</html>
+
+
