@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8" />
+    <title>이지은's Portfolio</title>
+    <meta name="description" content="portfolio" />
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/vendor.css" />
+
+    <!-- script
+    ================================================== -->
+    <script defer src="js/vendor/fontawesome/all.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <style>
+      /* 모바일 목업 */
+      #mobileMockup {
+        position: absolute;
+        top: 5%;
+        left: 70%;
+        transform: translateX(-50%);
+        z-index: 99;
+        width: 325px;
+        height: 650px;
+        background: white;
+        border: 16px solid black;
+        border-radius: 50px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        display: none;
+        overflow: hidden; /* 추가: 목업 외부 넘침 방지 */
+        box-sizing: border-box;
+      }
+
+      #dynamicIsland {
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        height: 30px;
+        background: #000;
+        border-radius: 20px;
+        z-index: 2;
+      }
+
+      #iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        margin-top: 40px;
+        overflow-y: auto; /* 스크롤 가능하도록 */
+        display: block;
+        box-sizing: border-box;
+      }
+
+      #closeButton {
+        position: absolute;
+        top: -5px;
+        right: -1px;
+        background: #fff;
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+        font-weight: bolder;
+        cursor: pointer;
+        z-index: 3;
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body id="top" class="ss-preload">
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+      <div id="loader"></div>
+    </div>
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+      <div class="row s-header__nav-wrap">
+        <nav class="s-header__nav">
+          <ul>
+            <li class="current">
+              <a class="smoothscroll" href="#hero">Home</a>
+            </li>
+            <li><a class="smoothscroll" href="#about">About</a></li>
+            <li>
+              <a class="smoothscroll" href="#portfolio">Design Portfolio</a>
+            </li>
+            <li>
+              <a class="smoothscroll" href="#portfolio2">Web Portfolio</a>
+            </li>
+            <li><a class="smoothscroll" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- end row -->
+
+      <a class="s-header__menu-toggle" href="#0" title="Menu">
+        <span class="s-header__menu-icon"></span>
+      </a>
+    </header>
+    <!-- end s-header -->
+
+    <!-- hero
+    ================================================== -->
+    <section id="hero" class="s-hero target-section">
+      <div class="s-hero__bg rellax" data-rellax-speed="-7"></div>
+      <div class="row s-hero__content">
+        <div class="column">
+          <div class="s-hero__content-about">
+            <h1 class="dancing">portfolio</h1>
+            <h3>
+              Designer <a class="smoothscroll" href="#about">Lee Ji Eun</a>
+            </h3>
+          </div>
+          <!-- end s-hero__content-about -->
+        </div>
+      </div>
+      <!-- s-hero__content -->
+
+      <div class="s-hero__scroll">
+        <a href="#about" class="s-hero__scroll-link smoothscroll">
+          <span class="scroll-arrow">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              style="fill: rgba(0, 0, 0, 1)"
+            >
+              <path
+                d="M18.707 12.707L17.293 11.293 13 15.586 13 6 11 6 11 15.586 6.707 11.293 5.293 12.707 12 19.414z"
+              ></path>
+            </svg>
+          </span>
+          <span class="scroll-text">Scroll Down</span>
+        </a>
+      </div>
+      <!-- s-hero__scroll -->
+    </section>
+    <!-- end s-hero -->
+
+    <!-- about
+    ================================================== -->
+    <section id="about" class="s-about target-section">
+      <div class="row">
+        <div class="column large-12 tab-12">
+          <img src="images/about.png" />
+        </div>
+      </div>
+      <!-- end row -->
+    </section>
+    <!-- end s-about -->
+
+    <!-- portfolio
+    ================================================== -->
+    <section id="portfolio" class="s-portfolio target-section">
+      <div class="row s-portfolio__header">
+        <div class="column large-12">
+          <h3>Design</h3>
+        </div>
+      </div>
+
+      <div
+        class="row collapse block-large-1-4 block-medium-1-4 block-tab-1-2 block-500-stack folio-list"
+      >
+        <div class="column folio-item">
+          <a href="#modal-01" class="folio-item__thumb">
+            <img
+              src="images/portfolio/ac.jpg"
+              srcset="images/portfolio/ac.jpg, images/portfolio/ac.jpg"
+              alt=""
+            />
+          </a>
+        </div>
+        <!-- end folio-item -->
+
+        <div class="column folio-item">
+          <a href="#modal-02" class="folio-item__thumb">
+            <img
+              src="images/portfolio/pz.jpg"
+              srcset="images/portfolio/pz.jpg, images/portfolio/pz.jpg"
+              alt=""
+            />
+          </a>
+        </div>
+        <!-- end folio-item -->
+
+        <div class="column folio-item">
+          <a href="#modal-03" class="folio-item__thumb">
+            <img
+              src="images/portfolio/Lf.jpg"
+              srcset="images/portfolio/Lf.jpg, images/portfolio/Lf.jpg"
+              alt=""
+            />
+          </a>
+        </div>
+        <!-- end folio-item -->
+
+        <div class="column folio-item">
+          <a href="#modal-04" class="folio-item__thumb">
+            <img
+              src="images/portfolio/LIV.jpg"
+              srcset="images/portfolio/LIV.jpg, images/portfolio/LIV.jpg"
+              alt=""
+            />
+          </a>
+        </div>
+        <!-- end folio-item -->
+
+        <div class="column folio-item">
+          <a href="#modal-05" class="folio-item__thumb">
+            <img
+              src="images/portfolio/Ds.jpg"
+              srcset="images/portfolio/Ds.jpg, images/portfolio/Ds.jpg"
+              alt=""
+            />
+          </a>
+        </div>
+        <!-- end folio-item -->
+
+        <div class="column folio-item">
+          <a href="#modal-06" class="folio-item__thumb">
+            <img
+              src="images/portfolio/IK.jpg"
+              srcset="images/portfolio/IK.jpg, images/portfolio/IK.jpg"
+              alt=""
+            />
+          </a>
+        </div>
+        <!-- end folio-item -->
+
+        <div class="column folio-item">
+          <a href="#modal-07" class="folio-item__thumb">
+            <img
+              src="images/portfolio/OS.jpg"
+              srcset="images/portfolio/OS.jpg, images/portfolio/OS.jpg"
+              alt=""
+            />
+          </a>
+        </div>
+        <!-- end folio-item -->
+
+        <div class="column folio-item">
+          <a href="#modal-08" class="folio-item__thumb">
+            <img
+              src="images/portfolio/cr.jpg"
+              srcset="images/portfolio/cr.jpg, images/portfolio/cr.jpg"
+              alt=""
+            />
+          </a>
+        </div>
+        <!-- end folio-item -->
+      </div>
+      <!-- end folio-list -->
+
+      <!-- portfolio2
+    ================================================== -->
+      <section id="portfolio2" class="s-portfolio target-section">
+        <div class="row s-portfolio__header">
+          <div class="column large-12">
+            <h3>Website</h3>
+          </div>
+        </div>
+
+        <div
+          class="row collapse block-large-1-3 block-medium-1-3 block-tab-1-2 block-500-stack folio-list"
+        >
+          <div class="column folio-item">
+            <a href="#modal-09" class="folio-item__thumb">
+              <img
+                src="images/portfolio/livwab.jpg"
+                srcset="
+                  images/portfolio/livwab.jpg,
+                  images/portfolio/livwab.jpg
+                "
+                alt=""
+              />
+            </a>
+          </div>
+          <!-- end folio-item -->
+
+          <div class="column folio-item">
+            <a href="#modal-10" class="folio-item__thumb">
+              <img
+                src="images/portfolio/jt.jpg"
+                srcset="images/portfolio/jt.jpg, images/portfolio/jt.jpg"
+                alt=""
+              />
+            </a>
+          </div>
+          <!-- end folio-item -->
+
+          <div class="column folio-item">
+            <a href="#modal-11" class="folio-item__thumb">
+              <img
+                src="images/portfolio/cf.jpg"
+                srcset="images/portfolio/cf.jpg, images/portfolio/cf.jpg"
+                alt=""
+              />
+            </a>
+          </div>
+          <!-- end folio-item -->
+        </div>
+      </section>
+
+      <!-- Modal Templates Popup
+        =========================================================== -->
+      <div id="modal-01" hidden>
+        <div class="modal-popup">
+          <img src="images/portfolio/001.jpg" alt="" />
+
+          <div class="modal-popup__desc">
+            <h5>NCT WISH Album Redesign</h5>
+            <div>
+              <p class="ps"></p>
+              <ul class="modal-popup__cat">
+                <li>Album Cover Design</li>
+                <li>Package Design</li>
+              </ul>
+              <!--                        <a href="https://dlwjd950.cafe24.com/" target="_blank" class="modal-popup__details"></a>-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end modal -->
+
+      <div id="modal-02" hidden>
+        <div class="modal-popup">
+          <img src="images/portfolio/02.jpg" alt="" />
+
+          <div class="modal-popup__desc">
+            <h5>Pizza Lovers Club Package Design</h5>
+            <div>
+              <p class="ps"></p>
+              <ul class="modal-popup__cat">
+                <li>Package Design</li>
+                <li>Illustrator</li>
+                <li>Photoshop</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end modal -->
+
+      <div id="modal-03" hidden>
+        <div class="modal-popup">
+          <img src="images/portfolio/003.jpg" alt="" />
+          <div class="modal-popup__desc">
+            <h5>Library Leaflet Design</h5>
+            <p class="ps"></p>
+            <ul class="modal-popup__cat">
+              <li>Leaflet Design</li>
+              <li>Illustrator</li>
+              <li>Photoshop</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- end modal -->
+
+      <div id="modal-04" hidden>
+        <div class="modal-popup">
+          <img src="images/portfolio/004.jpg" alt="" />
+
+          <div class="modal-popup__desc">
+            <h5>LIV Animal Medical Center Logo Redesign</h5>
+            <p class="ps"></p>
+            <ul class="modal-popup__cat">
+              <li>Logo Design</li>
+              <li>Illustrator</li>
+              <li>Photoshop</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- end modal -->
+
+      <div id="modal-05" hidden>
+        <div class="modal-popup">
+          <img src="images/portfolio/005.jpg" alt="" />
+          <div class="modal-popup__desc">
+            <h5>Demisoda Package Redesign</h5>
+            <p class="ps"></p>
+            <ul class="modal-popup__cat">
+              <li>Soft Drink Package Design</li>
+              <li>Illustrator</li>
+              <li>Photoshop</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- end modal -->
+
+      <div id="modal-06" hidden>
+        <div class="modal-popup">
+          <img src="images/portfolio/006.jpg" alt="" />
+          <div class="modal-popup__desc">
+            <h5>IKEA Social Media Banner Design</h5>
+            <p class="ps"></p>
+            <ul class="modal-popup__cat">
+              <li>Illustrator</li>
+              <li>Photoshop</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- end modal -->
+
+      <div id="modal-07" hidden>
+        <div class="modal-popup">
+          <img src="images/portfolio/007.jpg" alt="" />
+          <div class="modal-popup__desc">
+            <h5>Oasis Concert Ticketing Page Design</h5>
+            <p class="ps"></p>
+            <ul class="modal-popup__cat">
+              <li>Illustrator</li>
+              <li>Photoshop</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- end modal -->
+
+      <div id="modal-08" hidden>
+        <div class="modal-popup">
+          <img src="images/portfolio/008.jpg" alt="" />
+
+          <div class="modal-popup__desc">
+            <h5>Cherish App Redesign</h5>
+            <p class="ps"></p>
+            <ul class="modal-popup__cat">
+              <li>UI/UX Design</li>
+              <li>Figma</li>
+              <li>Illustrator</li>
+              <li>Photoshop</li>
+            </ul>
+            <div class="link">
+              <a
+                href="https://www.figma.com/proto/peVCI4R41pFJQUysC6yZw6/DJ-%EA%B9%80%EB%8B%A4%EC%9A%B4-%EC%9D%B4%EC%A7%80%EC%9D%80?node-id=26-1562&t=IbjIo83de4N09g43-1"
+                target="_blank"
+                class="modal-popup__details"
+              >
+                피그마 보러가기</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end modal -->
+
+      <div id="modal-09" hidden>
+        <div class="modal-popup">
+          <img src="images/portfolio/09.jpg" alt="" />
+          <div class="modal-popup__desc">
+            <h5>LIV Animal Medical Center Responsive Website Redesign</h5>
+            <!--                    <p class="ps"></p>-->
+            <ul class="modal-popup__cat">
+              <li>Responsive Web Redesign</li>
+              <li>html &amp; css</li>
+              <li>Javascript&amp; Jquery</li>
+            </ul>
+            <div class="link">
+              <a
+                href="https://zi3un.github.io/LIVproject.pdf"
+                target="_blank"
+                class="modal-popup__details"
+              >
+                기획서 보기
+              </a>
+              <a
+                href="https://zi3un.github.io/project_1/"
+                class="modal-popup__details"
+              >
+                사이트 바로가기
+              </a>
+            </div>
+          </div>
+
+          <!-- <a href="https://www.behance.net/" class="modal-popup__details">Project link</a> -->
+        </div>
+      </div>
+      <!-- end modal -->
+
+      <div id="modal-10" hidden>
+        <div class="modal-popup">
+          <img src="images/portfolio/010.jpg" alt="" />
+          <div class="modal-popup__desc">
+            <h5>Jigutoktok Website Redesign</h5>
+            <p class="ps"></p>
+            <ul class="modal-popup__cat">
+              <li>Renewal Web Redesign</li>
+              <li>html5 &amp; css5</li>
+              <li>Javascript&amp; Jquery</li>
+            </ul>
+            <div class="link">
+              <a
+                href="http://zi3un.github.io/Jigutoktokproject.pdf"
+                target="_blank"
+                class="modal-popup__details"
+              >
+                기획서 보기
+              </a>
+
+              <a
+                href="https://zi3un.github.io/project_2/"
+                target="_blank"
+                class="modal-popup__details"
+              >
+                사이트 바로가기</a
+              >
+
+              <a
+                class="modal-popup__details"
+                id="previewButton"
+                onclick="showPreview()"
+              >
+                모바일 웹 보기
+              </a>
+
+              <div id="mobileMockup">
+                <a id="closeButton" onclick="hidePreview()">X</a>
+                <div id="dynamicIsland"></div>
+                <iframe id="iframe"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end modal -->
+
+      <div id="modal-11" hidden>
+        <div class="modal-popup">
+          <img src="images/portfolio/011.jpg" alt="" />
+
+          <div class="modal-popup__desc">
+            <h5>Cafe24 Online Store Design</h5>
+            <div>
+              <p class="ps"></p>
+              <ul class="modal-popup__cat">
+                <li>Cafe24</li>
+                <li>Product Design</li>
+                <li>Illustrator</li>
+                <li>Photoshop</li>
+              </ul>
+              <div class="link">
+                <a
+                  href="https://tadaeun.cafe24.com/"
+                  target="_blank"
+                  class="modal-popup__details"
+                  >사이트 바로가기</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end modal -->
+    </section>
+    <!-- end s-portfolio -->
+
+    <!-- contact
+    ================================================== -->
+    <section id="contact" class="s-contact target-section">
+      <div class="row s-contact__header">
+        <div class="column large-12">
+          <h3 class="section-header-allcaps">
+            <span class="white">Say Hello</span>
+          </h3>
+        </div>
+      </div>
+      <div class="row s-contact__content">
+        <div class="column large-7 medium-12">
+          <h4 class="huge-text">
+            저에 대해 더 궁금한게 <br />있으신가요? <br />
+            언제든지 연락주세요 :)
+          </h4>
+        </div>
+        <div class="column large-4 medium-12">
+          <div class="row contact-infos">
+            <div class="column large-12 medium-6 tab-12">
+              <div class="contact-block">
+                <h5 class="contact-block__header">Email</h5>
+                <p class="contact-block__content">
+                  <a class="mailtoui" href="mailto:pppp0@naver.com"
+                    >ppp@naver.com</a
+                  >
+                </p>
+              </div>
+              <!-- end contact-block -->
+            </div>
+            <div class="column large-12 medium-6 tab-12">
+              <div class="contact-block">
+                <h5 class="contact-block__header">Phone</h5>
+                <p class="contact-block__content">
+                  <a href="tel:+11115555">010 1111 5555</a>
+                </p>
+              </div>
+              <!-- end contact-block -->
+            </div>
+          </div>
+          <!-- end contact-infos -->
+        </div>
+      </div>
+      <!-- s-contact__content -->
+    </section>
+    <!-- end s-contact -->
+
+    <!-- footer
+    ================================================== -->
+    <footer class="s-footer">
+      <div class="row">
+        <div
+          class="column large-4 medium-6 w-1000-stack s-footer__social-block"
+        ></div>
+
+        <div class="column large-7 medium-6 w-1000-stack ss-copyright">
+          <span> </span>
+          <span>thank you for watching! </span>
+        </div>
+      </div>
+
+      <div class="ss-go-top">
+        <a class="smoothscroll" title="Back to Top" href="#top">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M6 4h12v2H6zm5 10v6h2v-6h5l-6-6-6 6z" />
+          </svg>
+        </a>
+      </div>
+      <!-- end ss-go-top -->
+    </footer>
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      function showPreview() {
+        document.getElementById("mobileMockup").style.display = "block";
+        var iframe = document.getElementById("iframe");
+        iframe.src = "https://zi3un.github.io/project_2mobile/index.html"; // 원하는 URL로 교체
+      }
+
+      function hidePreview() {
+        document.getElementById("mobileMockup").style.display = "none";
+        var iframe = document.getElementById("iframe");
+        iframe.src = ""; // 끌 때 iframe 초기화 (선택사항)
+      }
+    </script>
+  </body>
+</html>
